@@ -29,8 +29,8 @@ To contribute to this project, make sure you have these modules installed and pr
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/ashupal86/your_repository.git
-    cd your_repository
+    git clone https://github.com/ashupal86/Code-Clause-Python-Internship/tree/main/Web%20Scrapper
+    cd your_folder
     ```
 
 2. **Install dependencies:**
