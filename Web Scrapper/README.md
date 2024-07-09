@@ -1,10 +1,23 @@
-# Project Name
+# Web Scrapper for fetching news Headlines
 
-Brief description or introduction of your project.
+
+I developed this project as a Python intern at Code Clause. During my internship, I gained valuable experience in web scraping and building Flask applications. This project allowed me to apply my Python skills and learn about fetching news headlines from various sources. I am excited to share my work and contribute to the open-source community.
+
+
+
+This project utilizes several modules to achieve its functionality:
+
+- `Flask`: A web framework used to build the application and handle HTTP requests.
+- `BeautifulSoup`: A library used for web scraping, allowing the project to fetch news headlines from various sources.
+- Other dependencies: Additional modules may be used depending on the specific requirements of the project.
+
+These modules are essential for the proper functioning of the web scraper and Flask application. They provide the necessary tools and functionality to fetch and display news headlines in a user-friendly manner.
+
+To contribute to this project, make sure you have these modules installed and properly configured in your development environment.
 
 ## Table of Contents
 
-- [Project Name](#project-name)
+- [Web Scrapper for fetching news Headlines](#web-scrapper-for-fetching-news-headlines)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
