@@ -2,13 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Email Sender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+    <h1>Email Sender</h1>
 
-    <a href="{{url_for('authorize')}}">authorize</a>
-    <a href="{{url_for('authenticate')}}">authenticate</a>
-    
+    <button id="openFormButton">Send Email</button>
+
+    <div class="container" id="form_container" style="display: none;">
+        
+        <button id="minimizeFormButton"><span>+</span></button>
+       
+        <!-- Email form -->
+        <form id="emailForm" action="/send_email" method="post" >
+
+            <label for="to">To:</label>
+            <input type="email" id="to" name="to" required><br>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br>
+
+            <input type="submit" value="Send">
+        </form>
+
+        <!-- Error messages container -->
+        <div id="errorContainer"></div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader"></div>
+
+    <!-- Row for email list and details -->
+    <div class="row">
+        <!-- Email list on the left -->
+        <div class="email-list">
+            <h2>Emails</h2>
+            <ul id="emailList">
+                {% for email in emails %}
+                    <li class="email-item" data-to="{{ email[1] }}" data-subject="{{ email[2] }}" data-message="{{ email[3] }}">
+                        <div class="details">
+                            <strong>To:</strong> {{ email[1] }}<br>
+                            <strong>Subject:</strong> {{ email[2] }}
+                        </div>
+                        {{ email[4] }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Email details on the right -->
+        <div class="email-details" id="emailDetails">
+            <div class="details-content">
+                <h2><strong>To:</strong> <span id="detailTo"></span></h2> <br>
+                <h2><strong>Subject:</strong> <span id="detailSubject"></span></h2><br>
+                <h3><strong>Message:</strong><br> <span id="detailMessage"></span></h3>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
