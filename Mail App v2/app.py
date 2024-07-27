@@ -15,7 +15,9 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
 # Replace these with your OAuth2 client credentials
-CLIENT_SECRETS_FILE = 'credentials.json'
+# CLIENT_SECRETS_FILE = 'credentials.json'
+CLIENT_SECRETS_FILE = os.getenv('credentials')
+
 
 # Define the required OAuth2.0 scopes
 SCOPES = [
